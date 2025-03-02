@@ -3,7 +3,6 @@
 import { FaInstagram, FaGithub, FaPython, FaReact } from "react-icons/fa";
 import { SiPostgresql, SiPrisma, SiSwift, SiTypescript, SiTailwindcss, SiRemix, SiRust, SiNextdotjs } from "react-icons/si";
 import { useState, useEffect } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
@@ -33,27 +32,11 @@ export default function Home() {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
     <div className="min-h-screen p-4 md:p-8 flex items-center justify-center bg-cover bg-center relative pixel-font-alt" 
          style={{ backgroundImage: "url('/bg.png')" }}>
       {/* Semi-transparent overlay with increased opacity for better contrast */}
       <div className="absolute inset-0 bg-white bg-opacity-25 dark:bg-gray-900 dark:bg-opacity-85"></div>
-      
-      {/* Dark Mode Toggle Button */}
-      <button 
-        onClick={toggleDarkMode}
-        className="absolute top-4 right-4 z-30 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg border-2 border-blue-500 dark:border-blue-400"
-        aria-label="Toggle dark mode"
-      >
-        {darkMode ? 
-          <FaSun className="text-yellow-500 text-xl" /> : 
-          <FaMoon className="text-blue-700 text-xl" />
-        }
-      </button>
       
       {/* Profile Header Card - Positioned absolutely to overlap */}
       <div className="absolute rounded-xl top-16 md:top-24 right-4 md:right-12 z-20 w-full max-w-md bg-white dark:bg-gray-800  shadow-xl   overflow-hidden border-4 border-blue-600">
