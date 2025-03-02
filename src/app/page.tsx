@@ -1,14 +1,10 @@
 "use client";
-import Image from "next/image";
-import { FaInstagram, FaGithub, FaCode, FaPaintBrush, FaBitcoin, FaPython, FaJs, FaReact } from "react-icons/fa";
-import { SiFigma, SiAdobeillustrator, SiPostgresql, SiPrisma, SiSwift, SiTypescript, SiTailwindcss, SiRemix, SiCplusplus } from "react-icons/si";
+
+import { FaInstagram, FaGithub, FaPython, FaReact } from "react-icons/fa";
+import { SiPostgresql, SiPrisma, SiSwift, SiTypescript, SiTailwindcss, SiRemix, SiRust, SiNextdotjs } from "react-icons/si";
 import { useState, useEffect } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiJavascript } from "react-icons/si";
-import { SiSolidity } from "react-icons/si";
-import { SiRust } from "react-icons/si";
-import { SiNextdotjs } from "react-icons/si";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
