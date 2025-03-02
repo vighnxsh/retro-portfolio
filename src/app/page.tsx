@@ -2,7 +2,7 @@
 
 import { FaInstagram, FaGithub, FaPython, FaReact } from "react-icons/fa";
 import { SiPostgresql, SiPrisma, SiSwift, SiTypescript, SiTailwindcss, SiRemix, SiRust, SiNextdotjs } from "react-icons/si";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
