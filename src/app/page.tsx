@@ -6,40 +6,21 @@ import { useState, useEffect } from "react";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Initialize dark mode based on user preference or system preference
+  // Remove dark mode state and related effects
+  
   useEffect(() => {
-    // Check if user has a preference stored
-    const savedDarkMode = localStorage.getItem("darkMode");
-    if (savedDarkMode !== null) {
-      setDarkMode(JSON.parse(savedDarkMode));
-    } else {
-      // Check system preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setDarkMode(prefersDark);
-    }
+    // Remove dark mode class if it exists
+    document.documentElement.classList.remove("dark");
   }, []);
-
-  // Update document when dark mode changes
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    // Save preference to localStorage
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
-  }, [darkMode]);
 
   return (
     <div className="min-h-screen p-4 md:p-8 flex items-center justify-center bg-cover bg-center relative pixel-font-alt" 
          style={{ backgroundImage: "url('/bg.png')" }}>
       {/* Semi-transparent overlay with increased opacity for better contrast */}
-      <div className="absolute inset-0 bg-white bg-opacity-25 dark:bg-gray-900 dark:bg-opacity-85"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-25"></div>
       
       {/* Profile Header Card - Positioned absolutely to overlap */}
-      <div className="absolute rounded-xl top-16 md:top-24 right-4 md:right-12 z-20 w-full max-w-md bg-white dark:bg-gray-800  shadow-xl   overflow-hidden border-4 border-blue-600">
+      <div className="absolute rounded-xl top-16 md:top-24 right-4 md:right-12 z-20 w-full max-w-md bg-white shadow-xl overflow-hidden border-4 border-blue-600">
         {/* Browser-like header with dots */}
         <div className="w-full p-2 flex items-center">
           <div className="flex gap-1 ml-2">
@@ -52,9 +33,9 @@ export default function Home() {
         <div className="p-6 bg-slate-800">
           <div className="flex flex-col md:flex-row items-center">
             <div className="flex-1">
-              <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 pixel-font">VIGHNESH .S</h2>
-              <h3 className="text-xl font-semibold text-gray-300 dark:text-gray-300 pixel-font">FULLSTACK DEV</h3>
-              <div className="mt-2 text-lg text-gray-200 dark:text-gray-200">
+              <h2 className="text-2xl font-bold text-blue-600 pixel-font">VIGHNESH .S</h2>
+              <h3 className="text-xl font-semibold text-gray-300 pixel-font">FULLSTACK DEV</h3>
+              <div className="mt-2 text-lg text-gray-200">
                 <p>📱 +91 987852576</p>
                 <p>✉️ vighnxsh.codes@gmail.com</p>
                 <p>📍 mumbai, india</p>
@@ -70,7 +51,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden border-4 border-blue-700 relative z-10">
+      <div className="w-full max-w-4xl bg-white rounded-xl shadow-2xl overflow-hidden border-4 border-blue-700 relative z-10">
         
         {/* Browser-like header with dots */}
         <div className="w-full bg-gradient-to-r from-blue-800 to-blue-600 p-2 flex items-center">
@@ -87,12 +68,12 @@ export default function Home() {
         
         <div className="flex flex-col md:flex-row">
           {/* Left Column */}
-          <div className="w-full pl-6 pt-4 md:w-2/5 bg-yellow-10 dark:bg-yellow-900/30 p-">
+          <div className="w-full pl-6 pt-4 md:w-2/5 bg-yellow-10 p-">
             
             {/* Social Media */}
             <div className="mb-8">
               <div className="flex items-center gap-2">
-                <FaXTwitter className="text-gray-700 dark:text-gray-300" />
+                <FaXTwitter className="text-gray-700" />
                 <a href="https://twitter.com/vighnxsh" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-blue-500 transition-colors">- @vighnxsh</a>
               </div>
               <div className="flex items-center gap-2 mb-2">
@@ -100,14 +81,14 @@ export default function Home() {
                 <a href="https://instagram.com/vighnxsh" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-pink-500 transition-colors">- @vighnxsh</a>
               </div>
               <div className="flex items-center gap-2 mb-2">
-                <FaGithub className="text-gray-700 dark:text-gray-300" />
+                <FaGithub className="text-gray-700" />
                 <a href="https://github.com/vighnxsh" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-gray-500 transition-colors">- @vighnxsh</a>
               </div>
             </div>
             
             {/* Languages */}
             <div className="mb-8">
-              <h2 className="text-blue-700 dark:text-blue-400 underline text-xl font-bold mb-4 pixel-font">LANGUAGES</h2>
+              <h2 className="text-blue-700 underline text-xl font-bold mb-4 pixel-font">LANGUAGES</h2>
               
               <div className="grid grid-cols-5 gap-2">
                 <div className="flex items-center justify-center w-10 h-10 text-blue-600 bg-white rounded">
@@ -137,7 +118,7 @@ export default function Home() {
             {/* Skills */}
             <div className="mb-8">
               
-              <h2 className="text-blue-700 dark:text-blue-400 underline text-xl font-bold mb-4 pixel-font">SKILLS</h2>
+              <h2 className="text-blue-700 underline text-xl font-bold mb-4 pixel-font">SKILLS</h2>
               <div className="grid grid-cols-5 gap-2">
                
               <div className="flex items-center justify-center w-10 h-10 text-blue-500 rounded">
@@ -174,7 +155,7 @@ export default function Home() {
              
                {/* Experience */}
                <div className="mb-8 pt-4">
-               <p className="text-xl pt-2 text-blue-800 dark:text-gray-300 leading-relaxed">
+               <p className="text-xl pt-2 text-blue-800 leading-relaxed">
                   Fullstack developer from Mumbai specializing in TypeScript and modern web technologies. Passionate about blockchain development, particularly Solana dApps. Crypto enthusiast and Solana degen who enjoys exploring the cutting edge of decentralized finance. Also enjoys drawing and creative pursuits when not coding.
                 </p>
               </div>
@@ -183,7 +164,7 @@ export default function Home() {
           
           
           {/* Right Column */}
-          <div className="w-full md:w-3/5 p-6 mt-36 relative bg-yellow-10 dark:bg-yellow-900/20">
+          <div className="w-full md:w-3/5 p-6 mt-36 relative bg-yellow-10">
             {/* Content with proper spacing for the profile card */}
             <div className="pt-20 md:pt-24">
               {/* About */}
@@ -196,21 +177,21 @@ export default function Home() {
                 <h3 className="text-lg font-bold mb-4 text-blue-700 pixel-font">PORTFOLIO HERE</h3>
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="p-2 border-2 border-blue-500 rounded-lg">
-                    <div className="w-20 h-20 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                    <div className="w-20 h-20 bg-gray-200 flex items-center justify-center">
                       <span className="text-xs">QR CODE</span>
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <div className="px-4 py-2 bg-white dark:bg-gray-700 border-2 border-blue-500 rounded-full text-center text-blue-700 dark:text-blue-400 font-mono text-sm">
+                    <div className="px-4 py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-sm">
                       WEB DEVELOPMENT
                     </div>
-                    <div className="px-4 py-2 bg-white dark:bg-gray-700 border-2 border-blue-500 rounded-full text-center text-blue-700 dark:text-blue-400 font-mono text-sm">
+                    <div className="px-4 py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-sm">
                       SOLANA DAPPS
                     </div>
-                    <div className="px-4 py-2 bg-white dark:bg-gray-700 border-2 border-blue-500 rounded-full text-center text-blue-700 dark:text-blue-400 font-mono text-sm">
+                    <div className="px-4 py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-sm">
                       BLOCKCHAIN
                     </div>
-                    <div className="px-4 py-2 bg-white dark:bg-gray-700 border-2 border-blue-500 rounded-full text-center text-blue-700 dark:text-blue-400 font-mono text-sm">
+                    <div className="px-4 py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-sm">
                       TYPESCRIPT
                     </div>
                   </div>
