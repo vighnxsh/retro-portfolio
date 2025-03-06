@@ -1,10 +1,10 @@
 "use client";
 
-import { FaInstagram, FaGithub, FaPython, FaReact } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaReact } from "react-icons/fa";
 import { SiPostgresql, SiPrisma, SiSwift, SiTypescript, SiTailwindcss, SiRemix, SiRust, SiNextdotjs } from "react-icons/si";
 import { useEffect } from "react";
 import { FaXTwitter } from "react-icons/fa6";
-
+import Image from 'next/image';
 export default function Home() {
   // Remove dark mode state and related effects
   
@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 md:p-8 flex items-center justify-center bg-cover bg-center relative pixel-font-alt" 
          style={{ backgroundImage: "url('/bg.png')" }}>
-      {/* Semi-transparent overlay with increased opacity for better contrast */}
-      <div className="absolute inset-0 bg-black bg-opacity-25"></div>
+      {/* Semi-transparent overlay with decreased opacity for better contrast */}
+      <div className="absolute inset-0 bg-white bg-opacity-20"></div>
       
       {/* Profile Header Card - Only visible on desktop */}
       <div className="hidden md:block absolute rounded-xl top-16 lg:top-24 right-8 lg:right-12 z-20 w-auto max-w-md bg-white shadow-xl overflow-hidden border-4 border-blue-600">
@@ -104,7 +104,7 @@ export default function Home() {
                 </div>
                 
                 <div className="flex items-center justify-center w-6 h-6 md:w-10 md:h-10 text-blue-600 bg-white rounded">
-                  <img src="/python.png" alt="Python" className="w-6 h-6 md:w-10 md:h-10" />
+                  <Image src="/python.png" alt="Python" width={40} height={40} className="w-6 h-6 md:w-10 md:h-10" />
                 </div>
                 
                 <div className="flex items-center justify-center w-6 h-6 md:w-10 md:h-10 bg-white text-orange-500 rounded">
@@ -147,7 +147,7 @@ export default function Home() {
             {/* Experience */}
             <div className="mb-4 md:mb-8 pt-1 md:pt-4">
               <p className="text-xs sm:text-sm md:text-xl bg-black pt-1 md:pt-2 text-green-500 pr-4 md:pr-12 text-semibold leading-relaxed">
-               fullstack AI dev also builds solana dapps for fun (def not for money) i love solana like fr 
+               memeber <span className="text-purple-500">@superteamIN</span> fullstack AI dev also builds solana dapps for fun (def not for money) i love solana like fr 
                i also draw sometimes. i mostly make apps in typescript and nextjs. rn learning ai and swift.
               </p>
             </div>
@@ -159,21 +159,40 @@ export default function Home() {
             <div className="md:pt-20 lg:pt-24">
               {/* Portfolio */}
               <div className="flex flex-col pt-2 md:pt-32 items-center">
-                <h3 className="text-sm md:text-lg font-bold mb-2 md:mb-4 text-blue-700 pixel-font">My Work</h3>
-                <div className="flex flex-col md:flex-row gap-2 md:gap-4">
-                  <div className="flex flex-col gap-1 md:gap-2 mt-1 md:mt-0">
-                    <div className="px-2 py-1 md:px-4 md:py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-xs md:text-sm">
-                      WEB DEVELOPMENT
+                <h3 className="text-sm md:text-lg font-bold mb-2 md:mb-4 text-blue-700 pixel-font">My Projects</h3>
+                <div className="flex flex-col md:flex-row gap-4">
+                  {/* First Project */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                      <a href="https://apecrate.fun" target="_blank" rel="noopener noreferrer" className="px-2 py-1 md:px-4 md:py-2 bg-slate-800 border-2 border-blue-500 rounded-full text-center text-green-500 font-mono text-xs md:text-sm hover:bg-blue-50 transition-colors">
+                        apecrate.fun 
+                      </a>
+                      <a href="https://github.com/vighnxsh/apecrate" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
+                        <FaGithub className="text-lg md:text-xl" />
+                      </a>
                     </div>
-                    <div className="px-2 py-1 md:px-4 md:py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-xs md:text-sm">
-                      SOLANA DAPPS
+                    <span className="text-xs md:text-sm text-gray-600">(previously SICKonSolana)</span>
+                    <div>
+                      <a href="https://twitter.com/superteam" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs md:text-sm text-gray-700">
+                        got a grant from @superteam <FaXTwitter className="inline-block" />
+                      </a>
                     </div>
-                    <div className="px-2 py-1 md:px-4 md:py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-xs md:text-sm">
-                      BLOCKCHAIN
+                  </div>
+
+                  {/* Separator */}
+                  <div className="hidden md:block w-px bg-gray-300 mx-4"></div>
+
+                  {/* Second Project */}
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                      <a href="https://forumflux.vercel.app" target="_blank" rel="noopener noreferrer" className="px-2 py-1 md:px-4 md:py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-xs md:text-sm hover:bg-blue-50 transition-colors">
+                        ForumFlux - Forum App
+                      </a>
+                      <a href="https://github.com/SICK-Solana" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900">
+                        <FaGithub className="text-lg md:text-xl" />
+                      </a>
                     </div>
-                    <div className="px-2 py-1 md:px-4 md:py-2 bg-white border-2 border-blue-500 rounded-full text-center text-blue-700 font-mono text-xs md:text-sm">
-                      TYPESCRIPT
-                    </div>
+                    <span className="text-md md:text-sm text-gray-600"><u>used nextjs, tailwindcss, nextauth and shadcn/ui</u></span>
                   </div>
                 </div>
               </div>
