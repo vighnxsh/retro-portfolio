@@ -1,6 +1,6 @@
 "use client";
 
-import { FaInstagram, FaGithub, FaReact } from "react-icons/fa";
+import {  FaGithub, FaReact } from "react-icons/fa";
 import { SiPostgresql, SiPrisma, SiSwift, SiTypescript, SiTailwindcss, SiRemix, SiRust, SiNextdotjs } from "react-icons/si";
 import { useEffect } from "react";
 import { FaXTwitter } from "react-icons/fa6";
