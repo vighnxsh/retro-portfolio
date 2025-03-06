@@ -84,10 +84,10 @@ export default function Home() {
                 <FaXTwitter className="text-gray-700 text-xs md:text-base" />
                 <a href="https://twitter.com/vighnxsh" target="_blank" rel="noopener noreferrer" className="text-sm md:text-xl hover:text-blue-500 transition-colors">- @vighnxsh</a>
               </div>
-              <div className="flex items-center gap-2 mb-1 md:mb-2">
+{/*               <div className="flex items-center gap-2 mb-1 md:mb-2">
                 <FaInstagram className="text-pink-500 text-xs md:text-base" />
                 <a href="https://instagram.com/vighnxsh" target="_blank" rel="noopener noreferrer" className="text-sm md:text-xl hover:text-pink-500 transition-colors">- @vighnxsh</a>
-              </div>
+              </div> */}
               <div className="flex items-center gap-2 mb-1 md:mb-2">
                 <FaGithub className="text-gray-700 text-xs md:text-base" />
                 <a href="https://github.com/vighnxsh" target="_blank" rel="noopener noreferrer" className="text-sm md:text-xl hover:text-gray-500 transition-colors">- @vighnxsh</a>
