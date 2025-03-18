@@ -36,7 +36,7 @@ export default function Home() {
                 <h2 className="text-2xl font-bold text-blue-600 pixel-font">VIGHNESH .S</h2>
                 <h3 className="text-xl font-semibold text-gray-300 pixel-font">FULLSTACK DEV</h3>
                 <div className="mt-2 text-lg text-gray-200">
-                  <p>📱 +91 987852576</p>
+{/*                   <p>📱 +91 9867852576</p> */}
                   <p>✉️ vighnxsh.codes@gmail.com</p>
                   <p>📍 mumbai, india</p>
                 </div>
